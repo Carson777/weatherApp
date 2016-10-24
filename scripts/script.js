@@ -40,7 +40,7 @@ var successFunction = function(positionObject){
 	//obtains long/lat, attaches them to URL, and request API from dark sky, then it passes the data to getWheather data
 	var long = positionObject.coords.longitude
 	var lat = positionObject.coords.latitude
-	var weatherURL = baseURL + '/' + lat + ',' + long
+	var weatherURL = baseURL + '/' + lat + ',' + long + "?callback=?"
 	var promise = $.getJSON(weatherURL)
 	promise.then(getWeatherData)
 	nowButton.addEventListener('click', nowSelected)
